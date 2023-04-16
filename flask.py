@@ -32,7 +32,7 @@ def prepare_image(img_path):
 app = Flask(__name__)
 
 
-#@app.route('/predict', methods=['POST'])
+@app.route('/predict')
 def infer_image():
     if 'file' not in request.files:
         return jsonify(error="Please try again. The Image doesn't exist")
