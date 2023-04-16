@@ -6,7 +6,7 @@ import numpy as np
 import requests
 #from bs4 import BeautifulSoup4
 
-model = load_model('FV.h5')
+#model = load_model('FV.h5')
 
 labels = {0: 'watermelon',1: 'lettuce',2: 'cabbage',3: 'mango',4: 'paprika',5: 'pineapple',6:
  'chilli pepper',7: 'peas',8: 'spinach',9: 'ginger',10: 'cauliflower',11: 'apple',12: 'orange',13:
