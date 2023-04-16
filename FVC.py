@@ -44,7 +44,27 @@ def run():
 
         if img_file is not None:
             result = processed_img(save_image_path)
-            print("Uploaded")
+            print(result)
             st.success("**Predicted : " + result + '**')
+             
+             
+            url="https://google.com"
+            browser = webdriver.chrome()
+            browser.get(url)
+            search_box.send_keys("recipes with " + result)
+            search_box.submit()
+            
+            try:
+                links = browser.find_elements_by_xpath("//ol[@class='web-regular-results']//h3//a")
+            except:
+                links = browser.find_elements_by_xpath("//h3//a")
+            results = []
+            for link in links:
+                heref = link.get_attribute("href")
+                print(href)
+                results.append(href)
+            browser.close()
+            return results
+   
 
 run()
