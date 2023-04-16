@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 #from tensorflow.keras.models import load_model
 import requests
-from bs4 import BeautifulSoup4
+#from bs4 import BeautifulSoup4
 
 model = load_model('FV.h5')
 
