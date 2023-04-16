@@ -51,7 +51,8 @@ def run():
             print(result)
             st.success("**Predicted : " + result + '**')
              
-             
+            #Looks for recipies on google
+            
             url="https://google.com"
             browser = webdriver.chrome()
             browser.get(url)
