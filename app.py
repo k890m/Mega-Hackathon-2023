@@ -1,7 +1,6 @@
 import streamlit as st
 from PIL import Image
 import requests
-import pyttsx3
 
 #from bs4 import BeautifulSoup
 
@@ -16,9 +15,6 @@ labels = {0: 'watermelon',1: 'lettuce',2: 'cabbage',3: 'mango',4: 'paprika',5: '
 
 def run():
     st.title("Food Identifier")
-    engine = pyttsx3.init()
-    engine.say("Food Identifier. Please Upload an image")
-    engine.runAndWait()
     img_file = st.file_uploader("Choose an Image", type=["jpg", "png"])
     if img_file is not None:
         img = Image.open(img_file).resize((250, 250))
