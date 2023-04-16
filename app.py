@@ -1,12 +1,12 @@
 import streamlit as st
 from PIL import Image
-#from tensorflow.keras.preprocessing.image import load_img, img_to_array
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
-#from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model
 import requests
-#from bs4 import BeautifulSoup4
+from bs4 import BeautifulSoup4
 
-#model = load_model('FV.h5')
+model = load_model('FV.h5')
 
 labels = {0: 'watermelon',1: 'lettuce',2: 'cabbage',3: 'mango',4: 'paprika',5: 'pineapple',6:
  'chilli pepper',7: 'peas',8: 'spinach',9: 'ginger',10: 'cauliflower',11: 'apple',12: 'orange',13:
@@ -16,7 +16,6 @@ labels = {0: 'watermelon',1: 'lettuce',2: 'cabbage',3: 'mango',4: 'paprika',5: '
  'capsicum',34: 'jalepeno',35: 'raddish'
 }
 
-"""
 
 def processed_img(location):
     img=load_img(location, target_size=(224, 224, 3))
@@ -32,7 +31,6 @@ def processed_img(location):
     print(res) 
     return res.capitalize()
     
-"""
 
 def run():
     st.title("Food Identifier")
@@ -45,8 +43,8 @@ def run():
             f.write(img_file.getbuffer())
 
         if img_file is not None:
-            #result = processed_img(save_image_path)
+            result = processed_img(save_image_path)
             print("Uploaded")
-            #st.success("**Predicted : " + result + '**')
+            st.success("**Predicted : " + result + '**')
 
 run()
