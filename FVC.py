@@ -5,6 +5,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 import requests
 from bs4 import BeautifulSoup4
+import pyttsx3
 
 model = load_model('FV.h5')
 
@@ -35,6 +36,9 @@ def processed_img(location):
 def run():
     st.title("Food Identifier")
     img_file = st.file_uploader("Choose an Image", type=["jpg", "png"])
+    engine = pyttsx3.init()
+    engine.say("Food Identifier. Please Upload an image")
+    engine.runAndWait()
     if img_file is not None:
         img = Image.open(img_file).resize((250, 250))
         st.image(img, use_column_width=False)
