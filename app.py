@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 import requests
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 
 labels = {0: 'watermelon',1: 'lettuce',2: 'cabbage',3: 'mango',4: 'paprika',5: 'pineapple',6:
  'chilli pepper',7: 'peas',8: 'spinach',9: 'ginger',10: 'cauliflower',11: 'apple',12: 'orange',13:
