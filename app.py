@@ -20,7 +20,7 @@ def run():
         st.image(img, use_column_width=False)
         save_image_path = './upload_images/' + img_file.name
         with open(save_image_path, "w") as f:
-            f.write(img_file.getbuffer)
+            f.write(img_file.getbuffer())
           
         if img_file is not None:
             url = 'http://192.168.1.5:5000/predict'
