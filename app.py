@@ -1,8 +1,8 @@
 import streamlit as st
 from PIL import Image
-from tensorflow.keras.preprocessing.image import load_img, img_to_array
+#from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
-from tensorflow.keras.models import load_model
+#from tensorflow.keras.models import load_model
 import requests
 from bs4 import BeautifulSoup
 
@@ -15,6 +15,8 @@ labels = {0: 'watermelon',1: 'lettuce',2: 'cabbage',3: 'mango',4: 'paprika',5: '
  26: 'carrot',27: 'garlic',28: 'pomegranate',29: 'kiwi',30: 'grapes',31: 'eggplant',32: 'potato',33:
  'capsicum',34: 'jalepeno',35: 'raddish'
 }
+
+"""
 
 def processed_img(location):
     img=load_img(location, target_size=(224, 224, 3))
@@ -29,6 +31,8 @@ def processed_img(location):
     res = labels[y]
     print(res) 
     return res.capitalize()
+    
+"""
 
 def run():
     st.title("Food Identifier")
@@ -41,8 +45,8 @@ def run():
             f.write(img_file.getbuffer())
 
         if img_file is not None:
-            result = processed_img(save_image_path)
-            print(result)
-            st.success("**Predicted : " + result + '**')
+            #result = processed_img(save_image_path)
+            print("Uploaded")
+            #st.success("**Predicted : " + result + '**')
 
 run()
